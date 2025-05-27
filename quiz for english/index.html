@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galaktion Tabidze Quiz</title>
+</head>
+<body>
+    <h2>Galaktion Tabidze Quiz</h2>
+    <button onclick="checkAnswer()">Start Quiz</button>
+    <p id="result"></p>
+
+    <script>
+      function checkAnswer() {
+        const q1 = prompt("1. Where was Galaktion Tabidze born?");
+        const q2 = prompt("2. What do the blue horses symbolize?");
+        const q3 = prompt("3. Name a poetic device used in his poem.");
+        let score = 0;
+
+        if (q1.toLowerCase().includes("chaqvi")) score++;
+        if (q2.toLowerCase().includes("freedom") || q2.toLowerCase().includes("imagination")) score++;
+        if (q3.toLowerCase().includes("metaphor") || q3.toLowerCase().includes("simile")) score++;
+
+        document.getElementById("result").innerText = `You got ${score}/3 correct!`;
+      }
+    </script>
+      <style>
+        * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+        }
+    
+        body {
+          display: flex;
+          flex-direction: column; 
+          justify-content: center;
+          align-items: center;
+          min-height: 100vh;
+          background-color: #f0f0f0;
+          font-family: Arial, sans-serif;
+          text-align: center;
+        }
+    
+        h2 {
+          margin-bottom: 20px;
+          color: #333;
+        }
+    
+        button {
+          border-radius: 25px;
+          color: black;
+          background-color: cyan;
+          padding: 10px 20px;
+          border: none;
+          cursor: pointer;
+          font-size: 16px;
+          transition: background-color 0.3s;
+        }
+    
+        button:hover {
+          background-color: #00cccc;
+        }
+    
+        #result {
+          margin-top: 20px;
+          font-size: 18px;
+          font-weight: bold;
+          color: #444;
+        }
+    </style>
+
+</body>
+</html>
